@@ -8,6 +8,15 @@ body {
     text-align: center;
 }
 
+  .container{
+                max-width: 800px;
+                margin: 0 auto;
+                color: red;
+                font-family: sans-serif;
+				padding-top: 60px;
+				padding-left:20px;
+				padding-right:20px;
+            }
 .text-big {
     font-size: 300%;
 }
