@@ -33,8 +33,6 @@ button.onclick = function(){
     request.send(null);
  };
  //submit name
- var nameinput = document.getElementById("name");
- var name1 = nameinput.value;
  var submit = document.getElementById("submit_bin");
  submit.onclick = function(){
      var request = new XMLHttpRequest();
@@ -55,6 +53,8 @@ button.onclick = function(){
             }
             
         }
+         var nameinput = document.getElementById("name");
+         var name1 = nameinput.value;
         
          request.open('GET','http://shubhgiri345.imad.hasura-app.io/submit?name=' + name1,true);
          request.send(null);
