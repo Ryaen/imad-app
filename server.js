@@ -109,7 +109,7 @@ app.get('/articlethree', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
 });*/
 var names=[];
-app.get('/submit/:name', function (req, res) {//URL: submit?name=xyz
+app.get('/submit', function (req, res) {//URL: submit?name=xyz
     var name = req.query.name;
     names.push(name);
     //JSON 
