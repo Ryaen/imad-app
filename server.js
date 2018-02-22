@@ -108,9 +108,9 @@ app.get('/', function (req, res) {
 app.get('/articlethree', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
 });*/
-
-app.get('/submit/:names', function (req, res) {
-    var name = req.params.names;
+var names[];
+app.get('/submit/:name', function (req, res) {
+    var name = req.params.name;
     names.push(name);
     //JSON 
   res.send(JSON.stringify(names));
