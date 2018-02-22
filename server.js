@@ -109,6 +109,13 @@ app.get('/articlethree', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
 });*/
 
+app.get('/submit/:names', function (req, res) {
+    var name = req.params.names;
+    names.push(name);
+    //JSON 
+  res.send(JSON.stringify(names));
+});
+
 app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
