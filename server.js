@@ -15,7 +15,7 @@ app.use(morgan('combined'));
 } */
 
 
-var pool = new Pool(config);
+//var pool = new Pool(config);
 var articles = {
     'articleone' : {
     title: 'Article One | Shubham Giri',
