@@ -106,7 +106,7 @@ var htmlTemplate = `
 
 app.get('/testdb', function (req, res) {
   //make a select query
-  pool.query('SELECT * FROM test',function(err,result){
+  pool.query('SELECT * FROM test',function(err,result.rows){
       if(err){
           res.status(500).send(err,toString());
       } else{
