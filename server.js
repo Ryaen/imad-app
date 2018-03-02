@@ -89,7 +89,7 @@ var htmlTemplate = `
         <hr/>
         ${heading};
         <div>
-            ${date};
+            ${date.toDateString()};
         </div>
         <div>
             ${content};
