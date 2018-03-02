@@ -1,7 +1,7 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
-var Pool = require('pg').Pool;
+//var Pool = require('pg').Pool;
 var app = express();
 app.use(morgan('combined'));
 
@@ -15,7 +15,7 @@ app.use(morgan('combined'));
 } */
 
 
-var pool = new Pool(config);
+//var pool = new Pool(config);
 var articles = {
     'articleone' : {
     title: 'Article One | Shubham Giri',
