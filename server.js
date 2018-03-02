@@ -6,13 +6,13 @@ var app = express();
 app.use(morgan('combined'));
 
 
-var confg = {
+/*var confg = {
     user: 'shubhgiri345',
     database: 'shubhgiri345',
     host : 'db.imad.hasura-app.io',
     port : '5432',
     password: process.env.DB.PASSWORD
-} 
+} */
 
 
 var pool = new Pool(config);
