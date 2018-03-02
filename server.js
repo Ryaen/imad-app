@@ -1,21 +1,21 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
-//var Pool = require('pg').Pool;
+var Pool = require('pg').Pool;
 var app = express();
 app.use(morgan('combined'));
 
 
-/*var confg = {
+var config = {
     user: 'shubhgiri345',
     database: 'shubhgiri345',
     host : 'db.imad.hasura-app.io',
     port : '5432',
-    password: process.env.DB.PASSWORD
-} */
+    password: process.env.DB_PASSWORD
+};
 
 
-//var pool = new Pool(config);
+var pool = new Pool(config);
 var articles = {
     'articleone' : {
     title: 'Article One | Shubham Giri',
@@ -112,7 +112,7 @@ app.get('/testdb', function (req, res) {
       } else{
           res.send(JSON.stringify(result));
       }
-  })
+  });
 });
 
 
