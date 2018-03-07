@@ -4,7 +4,7 @@ var path = require('path');
 var Pool = require('pg').Pool;
 var app = express();
 app.use(morgan('combined'));
-
+var crypto = require('crypto');
 
 var config = {
     user: 'shubhgiri345',
@@ -103,6 +103,15 @@ var htmlTemplate = `
     return htmlTemplate;
 }
 
+function hash(input,salt){
+    var hashed = crypto.pbkdf2Sync(input,salt,10000,512,'sha512');
+    return hashed.toString('hex');
+}
+
+app.get('/hash/:input', function(req,res){
+    var hashstring = has(req.params.input,'this-is-some-random-string');
+    res.send(hashstring);
+});
 
 app.get('/testdb', function (req, res) {
   //make a select query
