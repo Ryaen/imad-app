@@ -9,7 +9,7 @@ function moveright(){
 }
 img.onclick=function(){
    var interval = setInterval(moveright,200);
-    };*/
+    };
 var button = document.getElementById('counter');
 button.onclick = function(){
 
@@ -31,9 +31,9 @@ button.onclick = function(){
     //make a request
     request.open('GET','http://shubhgiri345.imad.hasura-app.io/counter',true);
     request.send(null);
- };
+ };*/
  //submit name
- var submit = document.getElementById("submit_bin");
+ var submit = document.getElementById("submit_btn");
  submit.onclick = function(){
      var request = new XMLHttpRequest();
     
@@ -41,23 +41,38 @@ button.onclick = function(){
     request.onreadystatechange = function(){
         if(request.readystate === XMLHttpRequest.DONE){
             if(request.status === 200){
-                 var names = request.responseText;
+                 /*var names = request.responseText;
                  names = JSON.parse(names);
                 var list = '';
                 for(var i=0;i<names.length;i++){
                 list += '<li>' + names[i] + '</li>';
                     }
                 var ul = document.getElementById("namelist");
-                ul.innerHTML = list;
+                ul.innerHTML = list;*/
+                
+                console.log('user logged in');
+                alert('Logged in successfully');
+                
+                }else if (request.status === 403) {
+                    alert('username/passsowrd is incorect');
                 }
+                else if(request.status === 500){
+                    alert('somethhing went wrong');
+                }
+                    
             }
             
         }
-         var nameinput = document.getElementById("name");
-         var name1 = nameinput.value;
+        /* var nameinput = document.getElementById("name");
+         var name1 = nameinput.value;*/
+         var username = document.getElementById("username");
+         var password = document.getElementById("password");
+         console.log(username);
+         console.log(password);
         
-         request.open('GET','http://shubhgiri345.imad.hasura-app.io/submit?name=' + name1,true);
-         request.send(null);
+         request.open('POST','http://shubhgiri345.imad.hasura-app.io/login',true);
+         request.setRequestHeader('Content-Type','application/json');
+         request.send(JSON.stringify({username: username, password: password}));
     };
  
  
